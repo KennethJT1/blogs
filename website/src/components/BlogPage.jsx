@@ -8,7 +8,7 @@ const BlogPage = () => {
     async function fetchBlogs() {
       let uri = `http://localhost:5000/blogs`;
       const res = await fetch(uri);
-      const data = res.json();
+      const data =await  res.json();
       setBlogs(data);
     }
     fetchBlogs();
