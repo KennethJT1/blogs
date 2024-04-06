@@ -1,14 +1,16 @@
 import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 
-const BlogCards = ({ blogs }) => {
-  const filterBlogs = blogs;
+const BlogCards = ({ blogs, currentPage, selectedCategory, pageSize }) => {
+  const filterBlogs = blogs
+    .filter((blog) => !selectedCategory || blog.category === selectedCategory)
+    .slice((currentPage - 1) * pageSize, currentPage * pageSize);
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
       {filterBlogs.map((blog) => (
-        <Link key={blog.id}>
+        <Link key={blog.id} className="p-5 cursor-pointer shadow-lg rounded">
           <div>
-            <img src={blog.image} alt={blog.title} className="" />
+            <img src={blog.image} alt={blog.title} className="w-full" />
           </div>
           <h3 className="mt-4 mb-2 font-bold hover:text-blue-600 cursor-pointer">
             {blog.title}
