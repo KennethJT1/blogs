@@ -28,21 +28,3 @@ const BlogCards = ({ blogs, currentPage, selectedCategory, pageSize }) => {
 };
 
 export default BlogCards;
-// author
-
-// authorPic
-
-// category
-
-// content
-
-// id
-
-// image
-//
-
-// reading_time
-
-// tags
-
-// title
