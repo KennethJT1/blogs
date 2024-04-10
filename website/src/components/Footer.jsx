@@ -169,10 +169,11 @@ const Footer = () => {
                     </button>
                   </form>
                   <p className="mt-4 text-sm text-gray-500">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Veritatis ab adipisci assumenda minima, numquam omnis
-                    repellendus, ratione autem deserunt ex iusto, totam odio?
-                    Modi error maxime vero officia.
+                    Unlock your potential as a writer with our expert blog
+                    writing services. From captivating narratives to engaging
+                    content, we are here to bring your ideas to life. Let us
+                    elevate your online presence and inspire your audience
+                    through the power of words.
                   </p>
                 </li>
               </ul>
@@ -180,7 +181,7 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col justtify-between pt-5 pb-10 border-t border-gray-800 sm:flex-row">
-            <p className="">©Copyright {currentYear} | All right reserved</p>
+            <p className="tesxt-sm text-gray-500 mr-2">©Copyright {currentYear} | All right reserved</p>
             <div className="flex items-centerm mt-4 space-x-4 sm:mt-0">
               <a
                 href=""

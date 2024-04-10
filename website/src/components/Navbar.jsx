@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FaBars, FaDribbble, FaFacebook, FaTwitter } from "react-icons/fa";
+import Modal from "./Modal";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -16,6 +19,14 @@ const Navbar = () => {
     { path: "/blogs", link: "Blogs" },
     { path: "/contact", link: "Contact" },
   ];
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <header className="bg-black text-white top-0 right-0 left-0">
@@ -49,10 +60,15 @@ const Navbar = () => {
           <a className="hover:text-red-500">
             <FaTwitter />
           </a>
-          <button className="bg-red-500 px-5 py-2 font-medium rounded hover:bg-white hover:text-red-500 transition-all duration-200 ease-in">
+          <button
+            onClick={openModal}
+            className="bg-red-500 px-5 py-2 font-medium rounded hover:bg-white hover:text-red-500 transition-all duration-200 ease-in"
+          >
             Log In
           </button>
         </div>
+
+        <Modal openModal={isModalOpen} closeModal={closeModal} />
 
         <div onClick={toggleMenu} className="md:hidden">
           <button className="cursor-pointer">
